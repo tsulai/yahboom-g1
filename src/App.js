@@ -34,7 +34,7 @@ function App() {
   const [apiDataState, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() =>{
-    axios.get('/config-api.json')
+    axios.get('http://localhost/yahboomg1.api/config-api.json')
     .then(
         response => {
           dispatch({type: 'FETCH_SUCCESS', payload: response.data})
