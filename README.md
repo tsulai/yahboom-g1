@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Interface for Yahboom G1 Tank Robot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application is the UI for Yahboom G1 Tank Robot. 
+Development is based on React with create-react-app.
 
-## Available Scripts
+## Total Project Scope
+1. UI (this project)
+2. APIs (not included in this project, require to create seperately, which is to control camera motor, server motors and LED Light Switches)
+3. API URLs in json (for easy configuration, this project read api url from json file, check the format in deployment section below)
 
-In the project directory, you can run:
+## Deployment Note for Yahboom G1 UI
 
-### `npm start`
+## System Requirement 
+1.	Node JS
+2.	React JS
+3.	GIT
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Install Node JS
+https://nodejs.org/en/download/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Install React JS
+npm install -g create-react-app
 
-### `npm test`
+## Install GIT
+https://gitforwindows.org/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Separate Application Require for API URL JSON
+This require to set up as separate application(static site) which HTTP Response as json.
+config-api.json (see attached json file format)
 
-### `npm run build`
+## Set Up Project in Machine
+Get and set up project from git repository. 
+Repository URL: https://github.com/tsulai/yahboom-g1.git
+Open with visual studio code
+Click on Source Control icon  
+Click on clone repository, copy paste repository url in top bar 
+Choose location(local directory path) for the project folder from git repo come in.
+CMD line terminal: 
+Check branches in git 
+- git branch
+Pull from master branch 
+- git pull origin master 
+All files and folders from git repository should downloaded to local.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Configure JSON file link in App
+Open file in Editor 
+- Yahboom-g1 > src > App.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Line 37:
+ useEffect(() =>{
+    axios.get('http://localhost/yahboomg1.api/config-api.json')
+    .then(
+        response => {
+          dispatch({type: 'FETCH_SUCCESS', payload: response.data})
+        }
+    )
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Check Project Working in Local Machine
+CMD line terminal: 
+Go to project folder
+- cd yahboom-g1
+Check project working or not
+- npm start
+(Web page will prompt in browser window in localhost:3000)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Package.json
+In project folder > Open package.json
+Add  new line as below.
+ "homepage": "http://www.yourdomainname.com/",
+Just above “dependencies” : {
+Save the file.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Build the project
+Go to cmd line
+/ Yahboom-g1 > npm run build
+This will generate “build” folder in your project folder.
+These are final working app files to upload as website.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##  Upload to Site
+Go to Site Manager(Website Provider Site)
+Under domain name access folder > Upload and Extract the files inside build folder
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##  JSON FILE FORMAT
+[{
+    "video" : "http://yourapiurl/video/",
+    "s_Motor": {
+      "v": "http://yourapiurl/servomotors/cameravertical/",
+      "h": "http://yourapiurl/servomotors/camerahorizontal/"
+    },
+    "d_Motor": {
+      "f": "http://yourapiurl/drivingmotors/forward/",
+      "b": "http://yourapiurl/drivingmotors/backward/",
+      "s_l": "http://yourapiurl/drivingmotors/spinleft/",
+      "s_r": "http://yourapiurl/drivingmotors/spinright/"
+    },
+    "rgbLed": {
+      "r_true": "http://yourapiurl/rgbled/redon/",
+      "r_false": "http://yourapiurl/rgbled/redoff/",
+      "g_true": "http://yourapiurl/rgbled/greenon/",
+      "g_false": "http://yourapiurl/rgbled/greenoff/",
+      "b_true": "http://yourapiurl/rgbled/blueon/",
+      "b_false": "http://yourapiurl/rgbled/blueoff/",
+      "bl_true": "http://yourapiurl/rgbled/blinkon/",
+      "bl_false": "http://yourapiurl/rgbled/blinkoff/"
+    }
+  }
+]
