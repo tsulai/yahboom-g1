@@ -8,6 +8,9 @@
 span.MuiSlider-root.MuiSlider-vertical {
   padding: 0 20px
 }
+span.MuiSlider-marked.MuiSlider-vertical{
+  margin-right: -17px;
+}
 span.MuiSlider-vertical .MuiSlider-markLabel{
   left: 2px;
 }
