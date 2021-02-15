@@ -31,15 +31,21 @@ config-api.json (see attached json file format)
 ## Set Up Project in Machine
 Get and set up project from git repository. 
 Repository URL: https://github.com/tsulai/yahboom-g1.git
-Open with visual studio code
-Click on Source Control icon  
-Click on clone repository, copy paste repository url in top bar 
+
+Open visual studio code. 
+Click on Source Control icon.  
+Click on clone repository, copy paste repository url in top bar. 
 Choose location(local directory path) for the project folder from git repo come in.
+
 CMD line terminal: 
+
 Check branches in git 
 - git branch
+
 Pull from master branch 
+
 - git pull origin master 
+
 All files and folders from git repository should downloaded to local.
 
 ## Configure JSON file link in App
@@ -59,50 +65,86 @@ Line 37:
 ## Check Project Working in Local Machine
 CMD line terminal: 
 Go to project folder
+
 - cd yahboom-g1
-Check project working or not
+
+Check project working or not 
+
 - npm start
+
 (Web page will prompt in browser window in localhost:3000)
 
 ## Package.json
 In project folder > Open package.json
+
 Add  new line as below.
+
  "homepage": "http://www.yourdomainname.com/",
-Just above “dependencies” : {
+ 
+Just above “dependencies” : {.
+
 Save the file.
 
 ## Build the project
 Go to cmd line
+
 / Yahboom-g1 > npm run build
+
 This will generate “build” folder in your project folder.
 These are final working app files to upload as website.
 
-##  Upload to Site
-Go to Site Manager(Website Provider Site)
-Under domain name access folder > Upload and Extract the files inside build folder
+##  Deploy/Upload to Site
+Go to Site Manager(Website Provider Site).
+
+Under domain name folder > Upload and Extract the files inside build folder
 
 ##  JSON FILE FORMAT
+
 [{
+
     "video" : "http://yourapiurl/video/",
+    
     "s_Motor": {
+    
       "v": "http://yourapiurl/servomotors/cameravertical/",
+      
       "h": "http://yourapiurl/servomotors/camerahorizontal/"
+      
     },
+    
     "d_Motor": {
+    
       "f": "http://yourapiurl/drivingmotors/forward/",
+      
       "b": "http://yourapiurl/drivingmotors/backward/",
+      
       "s_l": "http://yourapiurl/drivingmotors/spinleft/",
+      
       "s_r": "http://yourapiurl/drivingmotors/spinright/"
+      
     },
+    
     "rgbLed": {
+    
       "r_true": "http://yourapiurl/rgbled/redon/",
+      
       "r_false": "http://yourapiurl/rgbled/redoff/",
+      
       "g_true": "http://yourapiurl/rgbled/greenon/",
+      
       "g_false": "http://yourapiurl/rgbled/greenoff/",
+      
       "b_true": "http://yourapiurl/rgbled/blueon/",
+      
       "b_false": "http://yourapiurl/rgbled/blueoff/",
+      
       "bl_true": "http://yourapiurl/rgbled/blinkon/",
+      
       "bl_false": "http://yourapiurl/rgbled/blinkoff/"
+      
     }
+    
   }
+  
 ]
+
