@@ -19,7 +19,8 @@ export function useGETServerMotor(value,api) {
             })
         }
 
-    },[value])
+    },[value, api])
+    return status
 }
 
 
@@ -36,7 +37,7 @@ export function useGETDriverMotor(value, api) {
             console.log(err)
         })
     }
-     return [handleDirection]   
+     return [handleDirection, status]   
    
 }
 
@@ -53,7 +54,8 @@ export function useGETRGBLED(value,api) {
             console.log(err)
         })
 
-    },[value])
+    },[value, api])
+    return status
 }
 
 export default useCommon;

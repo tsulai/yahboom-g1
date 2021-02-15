@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
 function CamMotorSliderVertical(props) {
     const apiContext = React.useContext(APIContext) 
     const classes = useStyles();
-    const [value, setValue] = useState(1)
+    const [value, setValue] = useState(45)
     const matches = useMediaQuery('(min-width:500px)');
 
     useGETServerMotor(value,apiContext.s_Motor_v)

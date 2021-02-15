@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 function CamMotorSliderHorizontal(props) {
     const apiContext = React.useContext(APIContext) 
     const classes = useStyles();
-    const [value, setValue] = useState(1)
+    const [value, setValue] = useState(90)
 
     useGETServerMotor(value, apiContext.s_Motor_h)
 
