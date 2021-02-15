@@ -1,0 +1,24 @@
+[{
+    "video" : "http://192.168.10.133/video/",
+    "s_Motor": {
+      "v": "http://192.168.10.133/servomotors/cameravertical/",
+      "h": "http://192.168.10.133/servomotors/camerahorizontal/"
+    },
+    "d_Motor": {
+      "f": "http://192.168.10.133/drivingmotors/forward/",
+      "b": "http://192.168.10.133/drivingmotors/backward/",
+      "s_l": "http://192.168.10.133/drivingmotors/spinleft/",
+      "s_r": "http://192.168.10.133/drivingmotors/spinright/"
+    },
+    "rgbLed": {
+      "r_true": "http://192.168.10.133/rgbled/redon/",
+      "r_false": "http://192.168.10.133/rgbled/redoff/",
+      "g_true": "http://192.168.10.133/rgbled/greenon/",
+      "g_false": "http://192.168.10.133/rgbled/greenoff/",
+      "b_true": "http://192.168.10.133/rgbled/blueon/",
+      "b_false": "http://192.168.10.133/rgbled/blueoff/",
+      "bl_true": "http://192.168.10.133/rgbled/blinkon/",
+      "bl_false": "http://192.168.10.133/rgbled/blinkoff/"
+    }
+  }
+]
