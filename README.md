@@ -44,6 +44,8 @@ Check branches in git
 
 Pull from master branch 
 
+- git fetch origin
+
 - git pull origin master 
 
 All files and folders from git repository should downloaded to local.
