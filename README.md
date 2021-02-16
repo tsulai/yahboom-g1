@@ -72,6 +72,8 @@ Go to project folder
 
 Check project working or not 
 
+- npm install 
+
 - npm start
 
 (Web page will prompt in browser window in localhost:3000)
